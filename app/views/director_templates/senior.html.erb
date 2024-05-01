@@ -1,6 +1,6 @@
 <h1>Eldest director</h1>
 
-    <% matching_record = Director.all.order({ :dob => :asc}).first %>
+    <% matching_record = Director.where.not({:dob => nil}).order({ :dob => :asc}).first %>
 
 <p>The eldest director in our dataset right now is <a href="/directors/<%= matching_record.id %>"><%= matching_record.name %></a>, born on <%= matching_record.dob.strftime("%B %d, %Y") %>.</p>
 
