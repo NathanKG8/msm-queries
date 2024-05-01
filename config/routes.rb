@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   get("/directors/eldest", { :controller => "misc", :action => "homepage" })
 
-  get("/movies", { :controller => "misc", :action => "homepage" })
+  get("/movies", { :controller => "movies", :action => "index" })
+
+  get("/movies/:the_id", { :controller => "movies", :action => "show" })
 
   get("/actors", { :controller => "misc", :action => "homepage" })
 end
